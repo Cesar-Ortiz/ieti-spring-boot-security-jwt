@@ -11,18 +11,17 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 @EnableGlobalMethodSecurity( securedEnabled = true, jsr250Enabled = true, prePostEnabled = true )
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-
     @Override
     protected void configure( HttpSecurity http )
             throws Exception
     {
-        http.authorizeRequests()
-                .cors().and().csrf().disable()
+        http.cors().and().csrf().disable()
+                .authorizeRequests()
                 .antMatchers( HttpMethod.GET, "/v1/health" ).permitAll()
                 .antMatchers( HttpMethod.POST,"/v1/auth" ).permitAll()
+                .antMatchers( HttpMethod.POST,"/v1/user" ).permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS );
     }
 }
-

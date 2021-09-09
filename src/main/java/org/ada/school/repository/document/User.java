@@ -34,8 +34,8 @@ public class User
     }
 
 
-    public User( UserDto userDto )
-    {
+    public User( UserDto userDto ) {
+        System.out.println("entro a crear el user");
         name = userDto.getName();
         lastName = userDto.getLastName();
         email = userDto.getEmail();
@@ -80,8 +80,7 @@ public class User
         return roles;
     }
 
-    public void update( UserDto userDto )
-    {
+    public void update( UserDto userDto ) {
         this.name = userDto.getName();
         this.lastName = userDto.getLastName();
         this.email = userDto.getEmail();

@@ -44,6 +44,7 @@ public class UserController
     @PostMapping
     public ResponseEntity<User> create( @RequestBody UserDto userDto )
     {
+        System.out.println("entro al create controler");
         return ResponseEntity.ok( userService.create( userDto ) );
     }
 
