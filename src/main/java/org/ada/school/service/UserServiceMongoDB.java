@@ -11,9 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UserServiceMongoDB
-    implements UserService
-{
+public class UserServiceMongoDB implements UserService {
 
     private final UserRepository userRepository;
 
@@ -25,6 +23,7 @@ public class UserServiceMongoDB
     @Override
     public User create( UserDto userDto )
     {
+        System.out.println("entro al create de service mongodb");
         return userRepository.save( new User( userDto ) );
     }
 

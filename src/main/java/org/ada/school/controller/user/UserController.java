@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
 @RestController
@@ -44,6 +45,7 @@ public class UserController
     @PostMapping
     public ResponseEntity<User> create( @RequestBody UserDto userDto )
     {
+        System.out.println("entro al create controler");
         return ResponseEntity.ok( userService.create( userDto ) );
     }
 
@@ -54,9 +56,9 @@ public class UserController
     }
 
     @DeleteMapping( "/{id}" )
+    @RolesAllowed("ADMIN")
     public ResponseEntity<Boolean> delete( @PathVariable String id )
     {
         return ResponseEntity.ok( userService.deleteById( id ) );
     }
-
 }

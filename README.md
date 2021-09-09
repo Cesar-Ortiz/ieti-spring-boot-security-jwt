@@ -633,6 +633,10 @@ class SecurityConfiguration : WebSecurityConfigurerAdapter() {
          Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTMwZmMzMWYwNTk2YzE0YzRiOWY5NTMiLCJhZGFfcm9sZXMiOlsiVVNFUiJdLCJpYXQiOjE2MzA2MDAzMjAsImV4cCI6MTYzMDY4NjcyMH0.s29NZMHYDCsCXqj9W9ZajNnlwyzW4qJG832Z3PXhwhk
       ```
 
+### Solución Final
+
+![](img/Captura.PNG)
+
 ### Challenge Yourself: Implement a mechanism to support Application tokens
 
 1. Implement a new method in the *AuthController* that receives an encrypted secret and verify that the secret is the

@@ -1,5 +1,7 @@
 package org.ada.school.service;
 
+
+
 import org.ada.school.controller.user.UserDto;
 import org.ada.school.exception.UserNotFoundException;
 import org.ada.school.repository.document.User;
@@ -8,7 +10,7 @@ import java.util.List;
 
 public interface UserService
 {
-    User create( UserDto userDto );
+    User create(UserDto userDto );
 
     User findById( String id )
         throws UserNotFoundException;
